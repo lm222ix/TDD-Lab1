@@ -1,4 +1,5 @@
 import junit.framework.Assert;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import static junit.framework.Assert.*;
 
@@ -11,15 +12,22 @@ public class GameClassTests {
 
     private static Game game;
 
+
+    @BeforeClass
+    public static void setUp() {
+        game = new Game();
+    }
+
     @Test
     public void gameConstructorShouldSetDefaultDifficulty() {
-        game = new Game();
         assertEquals(1, game.getDifficulty());
 
     }
 
-
-
+    @Test
+    public void gameConstructorSetsScoreToZero() {
+        assertEquals(0, game.getScore());
+    }
 
 
 }

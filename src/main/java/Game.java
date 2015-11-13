@@ -5,10 +5,12 @@
 public class Game {
 
     private int difficulty;
+    private int score;
 
 
     public Game() {
         difficulty = 1;
+        score = 1;
     }
 
     public int getDifficulty() {
@@ -18,5 +20,14 @@ public class Game {
     public void setDifficulty(int difficulty) {
         this.difficulty = difficulty;
     }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
 
 }
