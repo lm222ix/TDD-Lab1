@@ -10,7 +10,7 @@ public class Game {
 
     public Game() {
         difficulty = 1;
-        score = 1;
+        score = 2;
     }
 
     public int getDifficulty() {
