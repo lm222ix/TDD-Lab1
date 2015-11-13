@@ -7,5 +7,6 @@ public class Game {
     public int difficulty;
 
     public Game() {
+        difficulty = 1;
     }
 }
