@@ -14,7 +14,7 @@ public class Question {
     private int answer;
 
     public int getAnswer() {
-        return answer;
+        return this.answer;
     }
 
     // Set&Gets
@@ -39,7 +39,6 @@ public class Question {
         random = new Random();
         generateNumbers(diff);
         generateOperator(this.random);
-
     }
 
 
@@ -72,7 +71,7 @@ public class Question {
     }
 
     public void calculateAnswer() {
-        this.answer = 0;
+        this.answer = 17;
     }
 
 

@@ -26,6 +26,8 @@ public class CalculateAnswerWithPlusOperator {
 
         Mockito.when(q.getNumbers()).thenReturn(testList);
         Mockito.when(q.getOperator()).thenReturn('+');
+        Mockito.when(q.getAnswer()).thenCallRealMethod();
+        q = new Question(1);
     }
 
     @Test
