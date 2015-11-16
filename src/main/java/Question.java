@@ -15,10 +15,15 @@ public class Question {
         this.numbers = numbers;
     }
 
+
+    public Question() {
+        numbers = new ArrayList<Integer>();
+    }
+
+
     //Generates a question based on difficulty 1,2 or 3.
     public  void generateQuestion(int diff) {
         if(diff == 1) {
-
         }
 
     }
