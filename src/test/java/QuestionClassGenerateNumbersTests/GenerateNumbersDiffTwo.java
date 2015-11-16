@@ -1,4 +1,4 @@
-package QuestionClassTests;
+package QuestionClassGenerateNumbersTests;
 
 import Model.Question;
 import org.junit.BeforeClass;
@@ -12,30 +12,31 @@ import static junit.framework.Assert.fail;
 /**
  * Created by Ludde on 2015-11-16.
  */
-public class GenerateQuestionsDiffThree {
+public class GenerateNumbersDiffTwo {
 
-    private static Model.Question q;
+    private static Question q;
 
     @BeforeClass
     public static void setUp() {
-        q = new Question(3);
+        q = new Question(2);
     }
 
     @Test
-    public void generateQuestionWithDiffThreeTest() {
+    public void generateQuestionWithDiffTwoTest() {
         ArrayList<Integer> numbers = q.getNumbers();
         assertEquals(3, numbers.size());
     }
 
     @Test
-    public void randomNumbersShouldBeBetween100And199ForDiffThreeQuestion() {
+    public void randomNumbersShouldBeBetweenOneAndNineForDiffTwoQuestion() {
         ArrayList<Integer> numbers = q.getNumbers();
         if(numbers.size() == 0)
             fail();
         for (int i = 0; i < numbers.size(); i++) {
-            if (numbers.get(i) > 199 || numbers.get(i) < 100) {
+            if (numbers.get(i) > 9 || numbers.get(i) < 1) {
                 fail();
             }
         }
     }
+
 }

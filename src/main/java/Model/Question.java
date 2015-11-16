@@ -10,6 +10,7 @@ public class Question {
 
     private ArrayList<Integer> numbers;
     private Random random;
+    private char operator;
 
     public ArrayList<Integer> getNumbers() {
         return numbers;
@@ -19,13 +20,13 @@ public class Question {
     public Question(int diff) {
         numbers = new ArrayList<Integer>();
         random = new Random();
-        generateQuestion(diff);
+        generateNumbers(diff);
 
     }
 
 
     //Generates a question based on difficulty 1,2 or 3.
-    public  void generateQuestion(int diff) {
+    public  void generateNumbers(int diff) {
         if(diff == 1) {
             for(int i = 0; i<2; i++) {
                 this.numbers.add(i, random.nextInt(9) + 1);
@@ -38,9 +39,11 @@ public class Question {
             for(int i = 0; i<3; i++) {
                 this.numbers.add(i, random.nextInt(99) + 100);
             }
-        }
+        } else {
 
+        }
     }
+
 
 
 
