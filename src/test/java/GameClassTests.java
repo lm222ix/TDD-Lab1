@@ -1,4 +1,4 @@
-import junit.framework.Assert;
+import Model.Game;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static junit.framework.Assert.*;

@@ -1,3 +1,5 @@
+package Model;
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -14,9 +16,10 @@ public class Question {
     }
 
 
-    public Question() {
+    public Question(int diff) {
         numbers = new ArrayList<Integer>();
         random = new Random();
+        generateQuestion(diff);
 
     }
 
