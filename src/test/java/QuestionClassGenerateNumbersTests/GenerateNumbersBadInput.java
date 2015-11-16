@@ -18,6 +18,7 @@ public class GenerateNumbersBadInput {
 
     @Test(expected = IllegalArgumentException.class)
     public void IncorrDiffShouldReturnException() {
+        
         q = new Question(0);
     }
 }
