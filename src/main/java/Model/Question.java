@@ -12,10 +12,23 @@ public class Question {
     private Random random;
     private char operator;
 
+
+    // Set&Gets
+
+    public char getOperator() {
+        return operator;
+    }
+
+    public void setOperator(char operator) {
+        this.operator = operator;
+    }
+
     public ArrayList<Integer> getNumbers() {
         return numbers;
     }
 
+
+    //Constructor and methods
 
     public Question(int diff) {
         numbers = new ArrayList<Integer>();
@@ -41,6 +54,15 @@ public class Question {
             }
         } else {
             throw new IllegalArgumentException();
+        }
+    }
+
+    public void generateOperator(Random random) {
+        int r = random.nextInt(2);
+        if(r == 0) {
+            setOperator('+');
+        } else if(r == 1) {
+            setOperator('-');
         }
     }
 
