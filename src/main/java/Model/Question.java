@@ -40,7 +40,7 @@ public class Question {
                 this.numbers.add(i, random.nextInt(99) + 100);
             }
         } else {
-
+            throw new IllegalArgumentException();
         }
     }
 
