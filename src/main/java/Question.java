@@ -31,9 +31,9 @@ public class Question {
                 this.numbers.add(i, random.nextInt(9) + 1);
             }
         } else if(diff == 2) {
-            this.numbers.add(1);
-            this.numbers.add(1);
-            this.numbers.add(1);
+            for(int i = 0; i<3; i++) {
+                this.numbers.add(i, random.nextInt(9) + 1);
+            }
 
         }
 
