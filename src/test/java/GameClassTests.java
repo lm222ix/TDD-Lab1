@@ -7,6 +7,7 @@ import static junit.framework.Assert.*;
  * Created by Ludde on 2015-11-13.
  *
  * All tests for the game class goes in here.
+ * I do not test the setter methods
  */
 public class GameClassTests {
 
