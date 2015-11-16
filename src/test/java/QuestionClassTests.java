@@ -1,6 +1,10 @@
 import junit.framework.Assert;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import java.util.ArrayList;
+
 import static junit.framework.Assert.*;
 
 /**
@@ -12,9 +16,14 @@ import static junit.framework.Assert.*;
 public class QuestionClassTests {
 
     private static Question q;
-
+    /*
     @BeforeClass
     public static void setUp() {
+        q = new Question();
+    }
+    */
+    @Before
+    public void beforeEachTest() {
         q = new Question();
     }
 
@@ -23,6 +32,18 @@ public class QuestionClassTests {
     public void generateQuestionWithDiffOneTest() {
         q.generateQuestion(1);
         assertEquals(2, q.getNumbers().size());
+    }
+
+    @Test
+    public void randomNumbersShouldBeBetweenOneAndNineForDiffOneQuestion() {
+        q.generateQuestion(1);
+        ArrayList<Integer> numbers = q.getNumbers();
+        for(int i = 0; i<numbers.size(); i++) {
+            if(numbers.get(i)> 9 || numbers.get(i) <1) {
+                fail();
+            }
+        }
+
     }
 
 

@@ -28,7 +28,7 @@ public class Question {
     public  void generateQuestion(int diff) {
         if(diff == 1) {
             for(int i = 0; i<2; i++) {
-                this.numbers.add(random.nextInt(9) + 1);
+                this.numbers.add(i, random.nextInt(9) + 1);
             }
 
         }
