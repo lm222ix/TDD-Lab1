@@ -13,10 +13,6 @@ public class Question {
         return numbers;
     }
 
-    public void setNumbers(ArrayList<Integer> numbers) {
-        this.numbers = numbers;
-    }
-
 
     public Question() {
         numbers = new ArrayList<Integer>();
@@ -34,6 +30,7 @@ public class Question {
             for(int i = 0; i<3; i++) {
                 this.numbers.add(i, random.nextInt(9) + 1);
             }
+        } else if(diff == 3) {
 
         }
 

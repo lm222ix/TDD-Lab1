@@ -49,20 +49,40 @@ public class QuestionClassTests {
     }
 
     @Test
-    public void generateQuestionWithDiffTwo() {
+    public void generateQuestionWithDiffTwoTest() {
         q.generateQuestion(2);
         ArrayList<Integer> numbers = q.getNumbers();
         assertEquals(3, numbers.size());
     }
 
     @Test
-    public void randomNumbersForDiffTwoQuestion() {
+    public void randomNumbersShouldBeBetweenOneAndNineForDiffTwoQuestion() {
         q.generateQuestion(2);
         ArrayList<Integer> numbers = q.getNumbers();
         if(numbers.size() == 0)
             fail();
         for (int i = 0; i < numbers.size(); i++) {
             if (numbers.get(i) > 9 || numbers.get(i) < 1) {
+                fail();
+            }
+        }
+    }
+
+    @Test
+    public void generateQuestionWithDiffThreeTest() {
+        q.generateQuestion(3);
+        ArrayList<Integer> numbers = q.getNumbers();
+        assertEquals(3, numbers.size());
+    }
+
+    @Test
+    public void randomNumbersShouldBeBetween100And199ForDiffThreeQuestion() {
+        q.generateQuestion(3);
+        ArrayList<Integer> numbers = q.getNumbers();
+        if(numbers.size() == 0)
+            fail();
+        for (int i = 0; i < numbers.size(); i++) {
+            if (numbers.get(i) > 199 || numbers.get(i) < 100) {
                 fail();
             }
         }
