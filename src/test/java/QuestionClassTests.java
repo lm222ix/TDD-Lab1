@@ -22,7 +22,7 @@ public class QuestionClassTests {
     @Test
     public void generateQuestionWithDiffOneTest() {
         q.generateQuestion(1);
-        assertEquals(3, q.getNumbers());
+        assertEquals(3, q.getNumbers().size());
     }
 
 
