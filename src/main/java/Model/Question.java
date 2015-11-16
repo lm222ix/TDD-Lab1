@@ -34,6 +34,7 @@ public class Question {
         numbers = new ArrayList<Integer>();
         random = new Random();
         generateNumbers(diff);
+        operator = 'a';
 
     }
 

@@ -19,7 +19,6 @@ public class GenerateOperatorInConstructorWorks {
 
     @Test
     public void constructorGeneratesAOperator() {
-        System.out.println(q.getOperator());
         assertNotSame('\u0000', q.getOperator());       //'\u0000' is the default value of a char according to javadocs.
     }
 }
