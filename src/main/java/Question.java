@@ -17,6 +17,7 @@ public class Question {
     public Question() {
         numbers = new ArrayList<Integer>();
         random = new Random();
+
     }
 
 
