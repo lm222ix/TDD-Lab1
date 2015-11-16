@@ -30,7 +30,6 @@ public class Question {
             for(int i = 0; i<2; i++) {
                 this.numbers.add(i, random.nextInt(9) + 1);
             }
-
         }
 
     }

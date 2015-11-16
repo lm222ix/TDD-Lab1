@@ -38,12 +38,34 @@ public class QuestionClassTests {
     public void randomNumbersShouldBeBetweenOneAndNineForDiffOneQuestion() {
         q.generateQuestion(1);
         ArrayList<Integer> numbers = q.getNumbers();
+        if(numbers.size() == 0)
+            fail();
         for(int i = 0; i<numbers.size(); i++) {
             if(numbers.get(i)> 9 || numbers.get(i) <1) {
                 fail();
             }
         }
 
+    }
+
+    @Test
+    public void generateQuestionWithDiffTwo() {
+        q.generateQuestion(2);
+        ArrayList<Integer> numbers = q.getNumbers();
+        assertEquals(3, numbers.size());
+    }
+
+    @Test
+    public void randomNumbersForDiffTwoQuestion() {
+        q.generateQuestion(2);
+        ArrayList<Integer> numbers = q.getNumbers();
+        if(numbers.size() == 0)
+            fail();
+        for (int i = 0; i < numbers.size(); i++) {
+            if (numbers.get(i) > 9 || numbers.get(i) < 1) {
+                fail();
+            }
+        }
     }
 
 
