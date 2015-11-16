@@ -24,6 +24,10 @@ public class Question {
     //Generates a question based on difficulty 1,2 or 3.
     public  void generateQuestion(int diff) {
         if(diff == 1) {
+            this.numbers.add(1);
+            this.numbers.add(1);
+            this.numbers.add(1);
+
         }
 
     }
