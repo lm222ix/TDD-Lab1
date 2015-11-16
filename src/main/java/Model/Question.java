@@ -11,7 +11,11 @@ public class Question {
     private ArrayList<Integer> numbers;
     private Random random;
     private char operator;
+    private int answer;
 
+    public int getAnswer() {
+        return answer;
+    }
 
     // Set&Gets
 
@@ -67,6 +71,9 @@ public class Question {
         }
     }
 
+    public void calculateAnswer() {
+        this.answer = 0;
+    }
 
 
 
