@@ -18,7 +18,8 @@ public class GenerateNumbersDiffTwo {
 
     @BeforeClass
     public static void setUp() {
-        q = new Question(2);
+        q = new Question();
+        q.makeNewQuestion(2);
     }
 
     @Test

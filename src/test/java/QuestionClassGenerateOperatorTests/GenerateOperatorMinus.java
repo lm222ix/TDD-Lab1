@@ -21,7 +21,8 @@ public class GenerateOperatorMinus {
     public static void setUp() throws Exception {
         mockedRandom = Mockito.mock(Random.class);
         Mockito.when(mockedRandom.nextInt(2)).thenReturn(1);
-        q = new Question(1);
+        q = new Question();
+        q.makeNewQuestion(1);
     }
     @Test
     public void operatorShouldBeMinus() {

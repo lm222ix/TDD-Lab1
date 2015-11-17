@@ -16,7 +16,9 @@ public class Question {
     public int getAnswer() {
         return this.answer;
     }
-
+    public void setAnswer(int answer) {
+        this.answer = answer;
+    }
     // Set&Gets
 
     public char getOperator() {
@@ -30,17 +32,27 @@ public class Question {
     public ArrayList<Integer> getNumbers() {
         return numbers;
     }
+    public void setNumbers(ArrayList<Integer> n) {
+        this.numbers = n;
+    }
 
 
     //Constructor and methods
 
-    public Question(int diff) {
+    public Question() {
         numbers = new ArrayList<Integer>();
         random = new Random();
-        generateNumbers(diff);
-        generateOperator(this.random);
     }
 
+    public void makeNewQuestion(int diff) {
+        clearOld();
+        generateOperator(this.random);
+        generateNumbers(diff);
+        calculateAnswer();
+    }
+    private void clearOld() {
+        this.numbers.clear();
+    }
 
     //Generates a question based on difficulty 1,2 or 3.
     public  void generateNumbers(int diff) {
@@ -71,7 +83,14 @@ public class Question {
     }
 
     public void calculateAnswer() {
-        this.answer = 17;
+        if(getNumbers().equals(null)) {
+            throw new NullPointerException();
+        }
+            int answer = 0;
+            for (int i = 0; i < getNumbers().size(); i++) {
+                answer += getNumbers().get(i);
+            }
+            this.answer = answer;
     }
 
 

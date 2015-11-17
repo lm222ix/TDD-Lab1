@@ -16,9 +16,14 @@ public class GenerateNumbersBadInput {
 
     private static Question q;
 
+    @BeforeClass
+    public static void setUp() {
+        q = new Question();
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void IncorrDiffShouldReturnException() {
 
-        q = new Question(0);
+        q.makeNewQuestion(0);
     }
 }

@@ -18,7 +18,8 @@ public class GenerateNumbersDiffOne {
 
     @BeforeClass
     public static void setUp() {
-        q = new Question(1);
+        q = new Question();
+        q.makeNewQuestion(1);
     }
 
     @Test
