@@ -85,10 +85,9 @@ public class Question {
         int r = this.random.nextInt(2);
         if(r == 0) {
             return '+';
-        } else if(r == 1) {
+        } else {
             return '-';
         }
-        return '\u0000';
     }
 
     public int calculateAnswer() {
