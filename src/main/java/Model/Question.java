@@ -98,7 +98,13 @@ public class Question {
                 answer += getNumbers().get(i);
             }
         } else if(this.operator == '-') {
-            return 2;
+            for(int i = 0; i<numbers.size(); i++) {
+                if(i==0) {
+                    answer += numbers.get(i);
+                } else {
+                    answer -= numbers.get(i);
+                }
+            }
         }
             return answer;
     }
