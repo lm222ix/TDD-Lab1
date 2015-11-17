@@ -52,16 +52,16 @@ public class Question {
 
     public void makeNewQuestion(int diff) {
         clearOld();
-        this.operator = generateOperator();
-        this.numbers = generateNumbers(diff);
-        this.answer = calculateAnswer();
+        setOperator(generateOperator());
+        setNumbers(generateNumbers(diff));
+        setAnswer(calculateAnswer());
     }
     private void clearOld() {
         this.numbers.clear();
     }
 
     //Generates a question based on difficulty 1,2 or 3.
-    private  ArrayList<Integer> generateNumbers(int diff) {
+    public  ArrayList<Integer> generateNumbers(int diff) {
         ArrayList<Integer> numbers = new ArrayList<Integer>();
         if(diff == 1) {
             for(int i = 0; i<2; i++) {
@@ -81,7 +81,7 @@ public class Question {
         return numbers;
     }
 
-    private char generateOperator() {
+    public char generateOperator() {
         int r = this.random.nextInt(2);
         if(r == 0) {
             return '+';
@@ -91,7 +91,7 @@ public class Question {
         return '\u0000';
     }
 
-    private int calculateAnswer() {
+    public int calculateAnswer() {
             int answer = 0;
             for (int i = 0; i < getNumbers().size(); i++) {
                 answer += getNumbers().get(i);
