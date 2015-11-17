@@ -35,6 +35,4 @@ public class Game {
     public Question getQuestion() {
         return this.question;
     }
-
-
 }

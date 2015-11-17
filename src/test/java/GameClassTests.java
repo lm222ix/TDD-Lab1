@@ -14,8 +14,7 @@ import static junit.framework.Assert.*;
 public class GameClassTests {
 
     private static Game game;
-
-
+    
     @BeforeClass
     public static void setUp() {
         game = new Game();
@@ -36,5 +35,4 @@ public class GameClassTests {
     public void gameConstructorInstanciatesQuestion() {
         game.getQuestion().getOperator();   //Just doing some method to check if its instanciated
     }
-
 }
