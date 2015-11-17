@@ -26,7 +26,7 @@ public class Question {
     public void setAnswer(int answer) {
         this.answer = answer;
     }
-    
+
     public char getOperator() {
         return operator;
     }
@@ -52,51 +52,51 @@ public class Question {
 
     public void makeNewQuestion(int diff) {
         clearOld();
-        generateOperator();
-        generateNumbers(diff);
-        calculateAnswer();
+        this.operator = generateOperator();
+        this.numbers = generateNumbers(diff);
+        this.answer = calculateAnswer();
     }
     private void clearOld() {
         this.numbers.clear();
     }
 
     //Generates a question based on difficulty 1,2 or 3.
-    private  void generateNumbers(int diff) {
+    private  ArrayList<Integer> generateNumbers(int diff) {
+        ArrayList<Integer> numbers = new ArrayList<Integer>();
         if(diff == 1) {
             for(int i = 0; i<2; i++) {
-                this.numbers.add(i, random.nextInt(9) + 1);
+                numbers.add(random.nextInt(9) + 1);
             }
         } else if(diff == 2) {
             for(int i = 0; i<3; i++) {
-                this.numbers.add(i, random.nextInt(9) + 1);
+                numbers.add(random.nextInt(9) + 1);
             }
         } else if(diff == 3) {
             for(int i = 0; i<3; i++) {
-                this.numbers.add(i, random.nextInt(99) + 100);
+                numbers.add(random.nextInt(99) + 100);
             }
         } else {
             throw new IllegalArgumentException();
         }
+        return numbers;
     }
 
-    private void generateOperator() {
+    private char generateOperator() {
         int r = this.random.nextInt(2);
         if(r == 0) {
-            setOperator('+');
+            return '+';
         } else if(r == 1) {
-            setOperator('-');
+            return '-';
         }
+        return '\u0000';
     }
 
-    private void calculateAnswer() {
-        if(getNumbers().equals(null)) {
-            throw new NullPointerException();
-        }
+    private int calculateAnswer() {
             int answer = 0;
             for (int i = 0; i < getNumbers().size(); i++) {
                 answer += getNumbers().get(i);
             }
-            this.answer = answer;
+            return answer;
     }
 
 
