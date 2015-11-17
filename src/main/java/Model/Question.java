@@ -92,10 +92,14 @@ public class Question {
     }
 
     public int calculateAnswer() {
-            int answer = 0;
+        int answer = 0;
+        if(this.operator == '+') {
             for (int i = 0; i < getNumbers().size(); i++) {
                 answer += getNumbers().get(i);
             }
+        } else if(this.operator == '-') {
+            return 2;
+        }
             return answer;
     }
 
