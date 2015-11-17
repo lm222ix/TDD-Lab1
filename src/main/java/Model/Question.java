@@ -13,14 +13,20 @@ public class Question {
     private char operator;
     private int answer;
 
+
+    // Set&Gets
+
+    public void setRandom(Random random) {
+        this.random = random;
+    }
+
     public int getAnswer() {
         return this.answer;
     }
     public void setAnswer(int answer) {
         this.answer = answer;
     }
-    // Set&Gets
-
+    
     public char getOperator() {
         return operator;
     }
@@ -46,7 +52,7 @@ public class Question {
 
     public void makeNewQuestion(int diff) {
         clearOld();
-        generateOperator(this.random);
+        generateOperator();
         generateNumbers(diff);
         calculateAnswer();
     }
@@ -55,7 +61,7 @@ public class Question {
     }
 
     //Generates a question based on difficulty 1,2 or 3.
-    public  void generateNumbers(int diff) {
+    private  void generateNumbers(int diff) {
         if(diff == 1) {
             for(int i = 0; i<2; i++) {
                 this.numbers.add(i, random.nextInt(9) + 1);
@@ -73,8 +79,8 @@ public class Question {
         }
     }
 
-    public void generateOperator(Random random) {
-        int r = random.nextInt(2);
+    private void generateOperator() {
+        int r = this.random.nextInt(2);
         if(r == 0) {
             setOperator('+');
         } else if(r == 1) {
@@ -82,7 +88,7 @@ public class Question {
         }
     }
 
-    public void calculateAnswer() {
+    private void calculateAnswer() {
         if(getNumbers().equals(null)) {
             throw new NullPointerException();
         }

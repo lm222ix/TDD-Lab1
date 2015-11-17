@@ -23,11 +23,11 @@ public class GenerateOperatorPlus {
         mockedRandom = Mockito.mock(Random.class);
         Mockito.when(mockedRandom.nextInt(2)).thenReturn(0);
         q = new Question();
+        q.setRandom(mockedRandom);
         q.makeNewQuestion(1);
     }
     @Test
     public void operatorShouldBePlus() {
-        q.generateOperator(mockedRandom);
         assertEquals('+', q.getOperator());
     }
 

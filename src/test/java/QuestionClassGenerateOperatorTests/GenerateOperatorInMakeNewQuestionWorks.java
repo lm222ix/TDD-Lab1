@@ -8,7 +8,7 @@ import static junit.framework.Assert.*;
 /**
  * Created by Ludde on 2015-11-16.
  */
-public class GenerateOperatorInConstructorWorks {
+public class GenerateOperatorInMakeNewQuestionWorks {
 
     private static Question q;
 

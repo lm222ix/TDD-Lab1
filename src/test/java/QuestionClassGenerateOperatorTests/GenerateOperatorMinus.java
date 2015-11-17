@@ -22,11 +22,11 @@ public class GenerateOperatorMinus {
         mockedRandom = Mockito.mock(Random.class);
         Mockito.when(mockedRandom.nextInt(2)).thenReturn(1);
         q = new Question();
+        q.setRandom(mockedRandom);
         q.makeNewQuestion(1);
     }
     @Test
     public void operatorShouldBeMinus() {
-        q.generateOperator(mockedRandom);
         assertEquals('-', q.getOperator());
     }
 }
