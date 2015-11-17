@@ -1,6 +1,8 @@
 import Model.Game;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.mockito.internal.matchers.Null;
+
 import static junit.framework.Assert.*;
 
 /**
@@ -30,5 +32,9 @@ public class GameClassTests {
         assertEquals(0, game.getScore());
     }
 
+    @Test
+    public void gameConstructorInstanciatesQuestion() {
+        game.getQuestion().getOperator();   //Just doing some method to check if its instanciated
+    }
 
 }

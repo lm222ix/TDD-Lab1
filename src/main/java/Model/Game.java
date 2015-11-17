@@ -8,7 +8,7 @@ public class Game {
 
     private int difficulty;
     private int score;
-
+    private Question question;
 
     public Game() {
         difficulty = 1;
@@ -29,6 +29,10 @@ public class Game {
 
     public void setScore(int score) {
         this.score = score;
+    }
+
+    public Question getQuestion() {
+        return this.question;
     }
 
 
