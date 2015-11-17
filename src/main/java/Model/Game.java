@@ -13,6 +13,7 @@ public class Game {
     public Game() {
         difficulty = 1;
         score = 0;
+        question = new Question();
     }
 
     public int getDifficulty() {
