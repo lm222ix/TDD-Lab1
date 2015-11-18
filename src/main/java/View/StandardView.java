@@ -42,9 +42,11 @@ public class StandardView implements IView {
             return selectedAction.Play;
         } else if(i == 'S') {
             return selectedAction.Settings;
+        } else if(i == 'Q') {
+            return selectedAction.Quit;
         }
         else {
-            return selectedAction.Quit;
+            return null;
         }
     }
 }
