@@ -14,4 +14,5 @@ public interface IView {
     public void displayEditSettingsMenu();
     public selectedAction selectedAction();
     public int getInput();
+    public void displayResult(int score);
 }

@@ -49,4 +49,8 @@ public class StandardView implements IView {
             return selectedAction.Error;
         }
     }
+
+    public void displayResult(int score) {
+        printer.println(" ");
+    }
 }
