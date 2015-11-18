@@ -42,7 +42,7 @@ public class selectedActionEnumMethodTests {
     public void shouldReturnSettingsIfInputIsS() {
         command = "S".getBytes();       //Input = S
         InputStream inputStream = new ByteArrayInputStream(command);
-        System.setIn(inputStream);          //System in now reads from my own inputstream
+        System.setIn(inputStream);
 
         IView.selectedAction input = view.selectedAction();
         assertEquals(IView.selectedAction.Settings, input);
@@ -50,12 +50,22 @@ public class selectedActionEnumMethodTests {
 
     @Test
     public void shouldReturnQuitIfInputIsQ() {
-        command = "Q".getBytes();       //Input = S
+        command = "Q".getBytes();       //Input = Q
         InputStream inputStream = new ByteArrayInputStream(command);
-        System.setIn(inputStream);          //System in now reads from my own inputstream
+        System.setIn(inputStream);
 
         IView.selectedAction input = view.selectedAction();
         assertEquals(IView.selectedAction.Quit, input);
+    }
+
+    @Test
+    public void shouldReturnErrorIfInputIsNotAnyOfAbove() {
+        command = "b".getBytes();       //Input = b
+        InputStream inputStream = new ByteArrayInputStream(command);
+        System.setIn(inputStream);
+
+        IView.selectedAction input = view.selectedAction();
+        assertEquals(IView.selectedAction.Error, input);
     }
 }
 
