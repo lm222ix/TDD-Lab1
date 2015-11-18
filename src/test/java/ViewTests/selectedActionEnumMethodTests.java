@@ -4,6 +4,7 @@ import View.IView;
 import View.Printer;
 import View.StandardView;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
@@ -16,23 +17,35 @@ import static junit.framework.Assert.assertEquals;
  * Created by Ludde on 2015-11-18.
  */
 public class selectedActionEnumMethodTests {
-    private IView view;
-    private Printer printer;
+    private static IView view;
+    private static Printer printer;
 
-    final byte[] play = "P".getBytes();    // Press P to Play
+    private byte[] command;
 
-    @Before
-    public void setUp() {
-        InputStream inputStream = new ByteArrayInputStream(play);
+    @BeforeClass
+    public static void setUp() {
         printer = new Printer();
         view = new StandardView(printer);
-        System.setIn(inputStream);          //System in now reads from my own inputstream
     }
 
     @Test
-    public void testInput() throws IOException {
-       IView.selectedAction input = view.selectedAction();
-       assertEquals(input, IView.selectedAction.Play);
+    public void shouldReturnPlayIfInputIsP() throws IOException {
+        command = "P".getBytes();       //Input = P
+        InputStream inputStream = new ByteArrayInputStream(command);
+        System.setIn(inputStream);          //System in now reads from my own inputstream
+
+        IView.selectedAction input = view.selectedAction();
+       assertEquals(IView.selectedAction.Play, input);
+    }
+
+    @Test
+    public void shouldReturnSettingsIfInputIsS() {
+        command = "S".getBytes();       //Input = S
+        InputStream inputStream = new ByteArrayInputStream(command);
+        System.setIn(inputStream);          //System in now reads from my own inputstream
+
+        IView.selectedAction input = view.selectedAction();
+        assertEquals(IView.selectedAction.Settings, input);
     }
 }
 
