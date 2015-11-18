@@ -35,4 +35,9 @@ public class StandardView implements IView {
             return 0;
         }
     }
+
+    public selectedAction selectedAction() {
+        int i = getInput();
+        return null;
+    }
 }
