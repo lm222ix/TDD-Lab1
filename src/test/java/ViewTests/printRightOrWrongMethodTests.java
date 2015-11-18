@@ -41,7 +41,7 @@ public class printRightOrWrongMethodTests {
 
     @Test
     public void shouldPrintWrongIfWinIsFalse() {
-        message = "Correct!";
+        message = "Wrong!";
         win = false;
         view.printRightOrWrong(win);
         verify(printer, times(1)).println(message);
