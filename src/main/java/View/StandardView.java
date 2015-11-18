@@ -28,6 +28,6 @@ public class StandardView implements IView {
     }
 
     public int getInput() {
-        return 0;
+        return 81;
     }
 }
