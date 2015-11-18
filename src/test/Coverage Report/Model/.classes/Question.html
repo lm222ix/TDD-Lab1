@@ -1,0 +1,198 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Question</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">Model</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Question (Model)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Question</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (13/ 13)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    97.9%
+  </span>
+  <span class="absValue">
+    (47/ 48)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package Model;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import java.util.ArrayList;
+<i>4</i>&nbsp;import java.util.Random;
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;/**
+<i>7</i>&nbsp; * Created by Ludde on 2015-11-16.
+<i>8</i>&nbsp; */
+<i>9</i>&nbsp;public class Question {
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;    private ArrayList&lt;Integer&gt; numbers;
+<i>12</i>&nbsp;    private Random random;
+<i>13</i>&nbsp;    private char operator;
+<i>14</i>&nbsp;    private int answer;
+<i>15</i>&nbsp;
+<i>16</i>&nbsp;
+<i>17</i>&nbsp;    // Set&amp;Gets
+<i>18</i>&nbsp;
+<i>19</i>&nbsp;    public void setRandom(Random random) {
+<b class="fc"><i>20</i>&nbsp;        this.random = random;</b>
+<b class="fc"><i>21</i>&nbsp;    }</b>
+<i>22</i>&nbsp;
+<i>23</i>&nbsp;    public int getAnswer() {
+<b class="fc"><i>24</i>&nbsp;        return this.answer;</b>
+<i>25</i>&nbsp;    }
+<i>26</i>&nbsp;    public void setAnswer(int answer) {
+<b class="fc"><i>27</i>&nbsp;        this.answer = answer;</b>
+<b class="fc"><i>28</i>&nbsp;    }</b>
+<i>29</i>&nbsp;
+<i>30</i>&nbsp;    public char getOperator() {
+<b class="fc"><i>31</i>&nbsp;        return operator;</b>
+<i>32</i>&nbsp;    }
+<i>33</i>&nbsp;
+<i>34</i>&nbsp;    public void setOperator(char operator) {
+<b class="fc"><i>35</i>&nbsp;        this.operator = operator;</b>
+<b class="fc"><i>36</i>&nbsp;    }</b>
+<i>37</i>&nbsp;
+<i>38</i>&nbsp;    public ArrayList&lt;Integer&gt; getNumbers() {
+<b class="fc"><i>39</i>&nbsp;        return numbers;</b>
+<i>40</i>&nbsp;    }
+<i>41</i>&nbsp;    public void setNumbers(ArrayList&lt;Integer&gt; n) {
+<b class="fc"><i>42</i>&nbsp;        this.numbers = n;</b>
+<b class="fc"><i>43</i>&nbsp;    }</b>
+<i>44</i>&nbsp;
+<i>45</i>&nbsp;
+<i>46</i>&nbsp;    //Constructor and methods
+<i>47</i>&nbsp;
+<b class="fc"><i>48</i>&nbsp;    public Question() {</b>
+<b class="fc"><i>49</i>&nbsp;        numbers = new ArrayList&lt;Integer&gt;();</b>
+<b class="fc"><i>50</i>&nbsp;        random = new Random();</b>
+<b class="fc"><i>51</i>&nbsp;    }</b>
+<i>52</i>&nbsp;
+<i>53</i>&nbsp;    public void makeNewQuestion(int diff) {
+<b class="fc"><i>54</i>&nbsp;        clearOld();</b>
+<b class="fc"><i>55</i>&nbsp;        setOperator(generateOperator());</b>
+<b class="fc"><i>56</i>&nbsp;        setNumbers(generateNumbers(diff));</b>
+<b class="fc"><i>57</i>&nbsp;        setAnswer(calculateAnswer());</b>
+<b class="fc"><i>58</i>&nbsp;    }</b>
+<i>59</i>&nbsp;    private void clearOld() {
+<b class="fc"><i>60</i>&nbsp;        this.numbers.clear();</b>
+<b class="fc"><i>61</i>&nbsp;    }</b>
+<i>62</i>&nbsp;
+<i>63</i>&nbsp;    //Generates a question based on difficulty 1,2 or 3.
+<i>64</i>&nbsp;    public  ArrayList&lt;Integer&gt; generateNumbers(int diff) {
+<b class="fc"><i>65</i>&nbsp;        ArrayList&lt;Integer&gt; numbers = new ArrayList&lt;Integer&gt;();</b>
+<b class="fc"><i>66</i>&nbsp;        if(diff == 1) {</b>
+<b class="fc"><i>67</i>&nbsp;            for(int i = 0; i&lt;2; i++) {</b>
+<b class="fc"><i>68</i>&nbsp;                numbers.add(random.nextInt(9) + 1);</b>
+<i>69</i>&nbsp;            }
+<b class="fc"><i>70</i>&nbsp;        } else if(diff == 2) {</b>
+<b class="fc"><i>71</i>&nbsp;            for(int i = 0; i&lt;3; i++) {</b>
+<b class="fc"><i>72</i>&nbsp;                numbers.add(random.nextInt(9) + 1);</b>
+<i>73</i>&nbsp;            }
+<b class="fc"><i>74</i>&nbsp;        } else if(diff == 3) {</b>
+<b class="fc"><i>75</i>&nbsp;            for(int i = 0; i&lt;3; i++) {</b>
+<b class="fc"><i>76</i>&nbsp;                numbers.add(random.nextInt(99) + 100);</b>
+<i>77</i>&nbsp;            }
+<i>78</i>&nbsp;        } else {
+<b class="nc"><i>79</i>&nbsp;            throw new IllegalArgumentException();</b>
+<i>80</i>&nbsp;        }
+<b class="fc"><i>81</i>&nbsp;        return numbers;</b>
+<i>82</i>&nbsp;    }
+<i>83</i>&nbsp;
+<i>84</i>&nbsp;    public char generateOperator() {
+<b class="fc"><i>85</i>&nbsp;        int r = this.random.nextInt(2);</b>
+<b class="fc"><i>86</i>&nbsp;        if(r == 0) {</b>
+<b class="fc"><i>87</i>&nbsp;            return &#39;+&#39;;</b>
+<i>88</i>&nbsp;        } else {
+<b class="fc"><i>89</i>&nbsp;            return &#39;-&#39;;</b>
+<i>90</i>&nbsp;        }
+<i>91</i>&nbsp;    }
+<i>92</i>&nbsp;
+<i>93</i>&nbsp;    public int calculateAnswer() {
+<b class="fc"><i>94</i>&nbsp;        int answer = 0;</b>
+<b class="fc"><i>95</i>&nbsp;        if(this.operator == &#39;+&#39;) {</b>
+<b class="fc"><i>96</i>&nbsp;            for (int i = 0; i &lt; getNumbers().size(); i++) {</b>
+<b class="fc"><i>97</i>&nbsp;                answer += getNumbers().get(i);</b>
+<i>98</i>&nbsp;            }
+<b class="fc"><i>99</i>&nbsp;        } else if(this.operator == &#39;-&#39;) {</b>
+<b class="fc"><i>100</i>&nbsp;            for(int i = 0; i&lt;numbers.size(); i++) {</b>
+<b class="fc"><i>101</i>&nbsp;                if(i==0) {</b>
+<b class="fc"><i>102</i>&nbsp;                    answer += numbers.get(i);</b>
+<i>103</i>&nbsp;                } else {
+<b class="fc"><i>104</i>&nbsp;                    answer -= numbers.get(i);</b>
+<i>105</i>&nbsp;                }
+<i>106</i>&nbsp;            }
+<i>107</i>&nbsp;        }
+<b class="fc"><i>108</i>&nbsp;            return answer;</b>
+<i>109</i>&nbsp;    }
+<i>110</i>&nbsp;
+<i>111</i>&nbsp;
+<i>112</i>&nbsp;
+<i>113</i>&nbsp;
+<i>114</i>&nbsp;
+<i>115</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2015-11-18 15:48</div>
+</div>
+</body>
+</html>
