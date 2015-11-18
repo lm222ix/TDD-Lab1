@@ -68,4 +68,22 @@ public class displayScoreMethodTests {
         verify(printer, times(1)).println(message);
     }
 
+    @Test
+    public void scoreZeroToThreeShouldPrintYouSuckMan() {
+        score = 3;
+        message = "Game over. Your score was: " + score + ", you can do better!";
+        view.displayResult(score);
+        verify(printer, times(1)).println(message);
+        score = 2;
+        view.displayResult(score);
+        verify(printer, times(1)).println(message);
+        score = 1;
+        view.displayResult(score);
+        verify(printer, times(1)).println(message);
+        score = 0;
+        view.displayResult(score);
+        verify(printer, times(1)).println(message);
+
+
+    }
 }
