@@ -44,7 +44,7 @@ public class StandardView implements IView {
             return selectedAction.Settings;
         }
         else {
-            return null;
+            return selectedAction.Quit;
         }
     }
 }
