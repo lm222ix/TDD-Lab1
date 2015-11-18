@@ -6,6 +6,6 @@ package View;
 public class StandardView implements IView {
 
     public void displayWelcome(){
-        
+
     }
 }
