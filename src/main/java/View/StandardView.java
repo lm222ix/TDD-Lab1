@@ -51,6 +51,6 @@ public class StandardView implements IView {
     }
 
     public void displayResult(int score) {
-        printer.println(" ");
+        printer.println("Game over. Your score was: " + score + ", thats awesome!");
     }
 }
