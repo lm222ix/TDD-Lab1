@@ -16,6 +16,7 @@ public class StandardView implements IView {
     }
 
     public void displayInstructions() {
-
+        p.println("Change difficulties by pressing S" +
+                ", or start playing by pressing P. Press Q to quit");
     }
 }
