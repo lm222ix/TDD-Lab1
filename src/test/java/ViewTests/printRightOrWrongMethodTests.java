@@ -39,5 +39,13 @@ public class printRightOrWrongMethodTests {
         verify(printer, times(1)).println(message);
     }
 
+    @Test
+    public void shouldPrintWrongIfWinIsFalse() {
+        message = "Correct!";
+        win = false;
+        view.printRightOrWrong(win);
+        verify(printer, times(1)).println(message);
+    }
+
 
 }
