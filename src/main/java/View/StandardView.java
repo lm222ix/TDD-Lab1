@@ -5,6 +5,12 @@ package View;
  */
 public class StandardView implements IView {
 
+    private Printer p;
+
+    public StandardView(Printer printer) {
+        p = printer;
+    }
+
     public void displayWelcome(){
 
     }
