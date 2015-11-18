@@ -14,4 +14,8 @@ public class StandardView implements IView {
     public void displayWelcome(){
         p.println("Welcome to the MathGame! This is a small game to practice doing math quickly in your head.");
     }
+
+    public void displayInstructions() {
+
+    }
 }

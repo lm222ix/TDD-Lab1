@@ -25,6 +25,9 @@ public class TestPrintMethods {
     final String welcome = "Welcome to the MathGame! " +
             "This is a small game to practice doing math quickly in your head.";
 
+    final String instructions = "Change difficulties by pressing S" +
+            ", or start playing by pressing P. Press Q to quit";
+
     @Before
     public void setUp() {
         printer = mock(Printer.class);
@@ -35,8 +38,13 @@ public class TestPrintMethods {
     @Test
     public void welcomeMessageShouldBePrintedToConsole() {
         view.displayWelcome();
-
         verify(printer, times(1)).println(welcome);
+    }
+
+    @Test
+    public void displayInstructionsShouldPrintInstructions() {
+        view.displayInstructions();
+        verify(printer, times(1)).println(instructions);
     }
 
 }
