@@ -23,7 +23,7 @@ public class TestPrintMethods {
     private IView view;
     private Printer printer;
     final String welcome = "Welcome to the MathGame! " +
-            "This is a small game to practice doing math quickly in your head." + "\n";
+            "This is a small game to practice doing math quickly in your head.";
 
     @Before
     public void setUp() {
