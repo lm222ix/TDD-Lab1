@@ -40,4 +40,16 @@ public class displayScoreMethodTests {
         verify(printer, times(1)).println(message);
     }
 
+    @Test
+    public void scoreSevenToNineShouldPrintNice() {
+        score = 7;
+        message = "Game over. Your score was: " + score + ", nice!";
+        view.displayResult(score);
+        verify(printer, times(1)).println(message);
+        
+        score = 9;
+        view.displayResult(score);
+        verify(printer, times(1)).println(message);
+    }
+
 }
