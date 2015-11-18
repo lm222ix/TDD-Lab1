@@ -38,6 +38,10 @@ public class StandardView implements IView {
 
     public selectedAction selectedAction() {
         int i = getInput();
-        return selectedAction.Play;
+        if(i == 'P') {
+            return selectedAction.Play;
+        } else {
+            return null;
+        }
     }
 }
