@@ -21,6 +21,6 @@ public class StandardView implements IView {
     }
 
     public void displayEditSettingsMenu() {
-
+        p.println("Please enter 1, 2 or 3 to select difficulty. Higher is harder: ");
     }
 }
