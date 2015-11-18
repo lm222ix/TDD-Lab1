@@ -63,4 +63,8 @@ public class StandardView implements IView {
         }
         printer.println(message);
     }
+
+    public void printRightOrWrong(boolean win) {
+
+    }
 }

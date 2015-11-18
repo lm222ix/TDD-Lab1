@@ -15,4 +15,5 @@ public interface IView {
     public selectedAction selectedAction();
     public int getInput();
     public void displayResult(int score);
+    public void printRightOrWrong(boolean bool);
 }
