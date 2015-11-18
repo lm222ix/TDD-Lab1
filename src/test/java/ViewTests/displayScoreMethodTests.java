@@ -46,7 +46,9 @@ public class displayScoreMethodTests {
         message = "Game over. Your score was: " + score + ", nice!";
         view.displayResult(score);
         verify(printer, times(1)).println(message);
-        
+        score = 8;
+        view.displayResult(score);
+        verify(printer, times(1)).println(message);
         score = 9;
         view.displayResult(score);
         verify(printer, times(1)).println(message);

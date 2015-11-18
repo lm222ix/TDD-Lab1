@@ -54,7 +54,7 @@ public class StandardView implements IView {
         if(score>9) {
             printer.println("Game over. Your score was: " + score + ", thats awesome!");
         } else {
-            printer.println("Game over!");
+            printer.println("Game over. Your score was: " + score + ", nice!");
         }
     }
 }
