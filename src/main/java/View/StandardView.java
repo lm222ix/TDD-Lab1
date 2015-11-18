@@ -28,6 +28,11 @@ public class StandardView implements IView {
     }
 
     public int getInput() {
-        return 81;
+        try{
+            return System.in.read();
+        } catch(IOException e) {
+            System.out.println(e.getMessage());
+            return 0;
+        }
     }
 }
