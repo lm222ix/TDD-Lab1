@@ -54,4 +54,18 @@ public class displayScoreMethodTests {
         verify(printer, times(1)).println(message);
     }
 
+    @Test
+    public void scoreFourToSixShouldPrintYouCanDoBeter() {
+        score = 4;
+        message = "Game over. Your score was: " + score + ", you can do better!";
+        view.displayResult(score);
+        verify(printer, times(1)).println(message);
+        score = 5;
+        view.displayResult(score);
+        verify(printer, times(1)).println(message);
+        score = 6;
+        view.displayResult(score);
+        verify(printer, times(1)).println(message);
+    }
+
 }
