@@ -47,5 +47,15 @@ public class selectedActionEnumMethodTests {
         IView.selectedAction input = view.selectedAction();
         assertEquals(IView.selectedAction.Settings, input);
     }
+
+    @Test
+    public void shouldReturnQuitIfInputIsQ() {
+        command = "Q".getBytes();       //Input = S
+        InputStream inputStream = new ByteArrayInputStream(command);
+        System.setIn(inputStream);          //System in now reads from my own inputstream
+
+        IView.selectedAction input = view.selectedAction();
+        assertEquals(IView.selectedAction.Quit, input);
+    }
 }
 
