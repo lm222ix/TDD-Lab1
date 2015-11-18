@@ -1,4 +1,4 @@
-package QuestionClassCalculateAnswerTests;
+package ModelTests.QuestionClassCalculateAnswerTests;
 
 import Model.Question;
 import org.junit.BeforeClass;

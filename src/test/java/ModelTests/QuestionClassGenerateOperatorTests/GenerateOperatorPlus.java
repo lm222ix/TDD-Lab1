@@ -1,11 +1,9 @@
-package QuestionClassGenerateOperatorTests;
+package ModelTests.QuestionClassGenerateOperatorTests;
 
 import static junit.framework.Assert.*;
 import Model.Question;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 
 import java.util.Random;

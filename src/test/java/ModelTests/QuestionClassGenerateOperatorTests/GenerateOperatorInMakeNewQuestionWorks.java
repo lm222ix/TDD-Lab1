@@ -1,4 +1,4 @@
-package QuestionClassGenerateOperatorTests;
+package ModelTests.QuestionClassGenerateOperatorTests;
 
 import Model.Question;
 import org.junit.BeforeClass;

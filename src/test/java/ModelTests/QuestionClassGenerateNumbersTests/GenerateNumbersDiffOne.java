@@ -1,4 +1,4 @@
-package QuestionClassGenerateNumbersTests;
+package ModelTests.QuestionClassGenerateNumbersTests;
 
 import Model.Question;
 import org.junit.BeforeClass;

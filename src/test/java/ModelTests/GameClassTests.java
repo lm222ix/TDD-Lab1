@@ -1,3 +1,5 @@
+package ModelTests;
+
 import Model.Game;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -14,7 +16,7 @@ import static junit.framework.Assert.*;
 public class GameClassTests {
 
     private static Game game;
-    
+
     @BeforeClass
     public static void setUp() {
         game = new Game();

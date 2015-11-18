@@ -1,13 +1,8 @@
-package QuestionClassCalculateAnswerTests;
+package ModelTests.QuestionClassCalculateAnswerTests;
 
-import static org.mockito.Matchers.*;
 import Model.Question;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.invocation.InvocationOnMock;
-import org.mockito.stubbing.Answer;
 
 import java.util.ArrayList;
 import java.util.Arrays;
