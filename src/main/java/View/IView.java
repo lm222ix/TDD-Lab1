@@ -6,4 +6,5 @@ package View;
 public interface IView {
     public void displayWelcome();
     public void displayInstructions();
+    public void displayEditSettingsMenu();
 }

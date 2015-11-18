@@ -28,6 +28,8 @@ public class TestPrintMethods {
     final String instructions = "Change difficulties by pressing S" +
             ", or start playing by pressing P. Press Q to quit";
 
+    final String editSettingsMessage = "Please enter 1, 2 or 3 to select difficulty. Higher is harder: ";
+
     @Before
     public void setUp() {
         printer = mock(Printer.class);
@@ -45,6 +47,12 @@ public class TestPrintMethods {
     public void displayInstructionsShouldPrintInstructions() {
         view.displayInstructions();
         verify(printer, times(1)).println(instructions);
+    }
+
+    @Test
+    public void displayEditSettingsMenu() {
+        view.displayEditSettingsMenu();
+        verify(printer, times(1)).println(editSettingsMessage);
     }
 
 }
