@@ -71,7 +71,7 @@ public class displayScoreMethodTests {
     @Test
     public void scoreZeroToThreeShouldPrintYouSuckMan() {
         score = 3;
-        message = "Game over. Your score was: " + score + ", you can do better!";
+        message = "Game over. Your score was: " + score + ", you suck man!";
         view.displayResult(score);
         verify(printer, times(1)).println(message);
         score = 2;
