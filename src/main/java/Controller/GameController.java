@@ -16,7 +16,7 @@ public class GameController {
         this.view = view;
     }
 
-    public GameController() {}
+    //public GameController() {}
 
     public boolean play() {
         IView.selectedAction input;
@@ -31,7 +31,6 @@ public class GameController {
     }
 
     public void newGame() {
-
     }
 
     public void displaySettings() {

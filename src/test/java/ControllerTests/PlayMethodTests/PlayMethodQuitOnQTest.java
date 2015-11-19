@@ -1,4 +1,4 @@
-package ControllerTests;
+package ControllerTests.PlayMethodTests;
 
 import Controller.GameController;
 import Model.Game;
@@ -8,17 +8,16 @@ import View.StandardView;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import static org.mockito.Mockito.*;
+
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
-
-import static org.mockito.Mockito.spy;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
+import static junit.framework.Assert.*;
 
 /**
  * Created by Ludde on 2015-11-19.
  */
-public class PlayMethodCallsDisplaySettingsOnInputS {
+public class PlayMethodQuitOnQTest {
 
     private static GameController gc;
     private static IView view;
@@ -30,16 +29,19 @@ public class PlayMethodCallsDisplaySettingsOnInputS {
     public static void setUp() {
         game = new Game();
         view = new StandardView(new Printer());
-        gc = spy(new GameController(game,view));
+        gc = new GameController(game,view);
+
     }
 
     @Test
-    public void PlayCallsDisplaySettingsOnInputS() {
-        command = "S".getBytes();
+    public void PlayReturnsFalseOnlyIfUserQuit() {
+        command = "P".getBytes();
         InputStream inputStream = new ByteArrayInputStream(command);
         System.setIn(inputStream);
-        gc.play();
-        verify(gc, times(1)).displaySettings();
+        assertTrue(gc.play());
+        command = "Q".getBytes();
+        inputStream = new ByteArrayInputStream(command);
+        System.setIn(inputStream);
+        assertFalse(gc.play());
     }
-
 }
