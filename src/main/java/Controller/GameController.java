@@ -24,7 +24,7 @@ public class GameController {
         input = view.selectedAction();
 
         if(input == IView.selectedAction.Play) {
-
+            newGame();
         }
 
         if(input == IView.selectedAction.Quit)
