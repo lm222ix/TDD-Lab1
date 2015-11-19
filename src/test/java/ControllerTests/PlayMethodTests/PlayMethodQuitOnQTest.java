@@ -2,6 +2,7 @@ package ControllerTests.PlayMethodTests;
 
 import Controller.GameController;
 import Model.Game;
+import Model.Question;
 import View.IView;
 import View.Printer;
 import View.StandardView;
@@ -29,7 +30,7 @@ public class PlayMethodQuitOnQTest {
     public static void setUp() {
         game = new Game();
         view = new StandardView(new Printer());
-        gc = new GameController(game,view);
+        gc = new GameController(game,view, new Question());
 
     }
 

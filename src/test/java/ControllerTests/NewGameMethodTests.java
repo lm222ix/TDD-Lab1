@@ -27,9 +27,8 @@ public class NewGameMethodTests {
     public static void setUp() {
         view = new StandardView(new Printer());
         game = spy(new Game());
-        gc = spy(new GameController(game,view));
-        q = mock(Question.class);
-
+        q = spy(new Question());
+        gc = spy(new GameController(game,view,q));
     }
 
     @Before
@@ -37,12 +36,16 @@ public class NewGameMethodTests {
         gc.newGame();
     }
 
-
     @Test
     public void newGameResetsScore() {
         verify(game, times(1)).setScore(0);
     }
 
+    @Test
+    public void newGameCreatesAndPrintsNewQuestionTenTimes() {
+        verify(game, times(1)).getQuestion();
+        verify(q, times(10)).makeNewQuestion(game.getDifficulty());
+    }
 
 
 

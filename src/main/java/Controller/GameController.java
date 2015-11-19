@@ -11,12 +11,12 @@ public class GameController {
 
     public Game game;
     public IView view;
-    private Question question;
+    public Question question;
 
-    public GameController(Game game, IView view) {
+    public GameController(Game game, IView view, Question q) {
         this.game = game;
         this.view = view;
-        this.question = game.getQuestion();
+        this.question = q;
     }
 
     //public GameController() {}
@@ -35,7 +35,9 @@ public class GameController {
 
     public void newGame() {
         game.setScore(0);
-
+        for(int i = 0; i<10; i++) {
+            question.makeNewQuestion(game.getDifficulty());
+        }
     }
 
     public void displaySettings() {

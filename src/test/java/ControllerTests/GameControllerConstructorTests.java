@@ -2,6 +2,7 @@ package ControllerTests;
 
 import Controller.GameController;
 import Model.Game;
+import Model.Question;
 import View.IView;
 import View.Printer;
 import View.StandardView;
@@ -28,7 +29,7 @@ public class GameControllerConstructorTests {
     public void gameOrViewNotNull() {
         game = new Game();
         view = new StandardView(new Printer());
-        gc = new GameController(game, view);
+        gc = new GameController(game, view, new Question());
         assertNotNull(gc.game);
         assertNotNull(gc.view);
     }

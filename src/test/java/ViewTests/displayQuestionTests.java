@@ -36,12 +36,14 @@ public class displayQuestionTests {
         view = new StandardView(printer);
         question = mock(Question.class);
         when(question.getNumbers()).thenReturn(testNumbers);
-        when(question.getOperator()).thenReturn(plusOperator);
-        question.makeNewQuestion(1);
+
     }
 
     @Test
     public void displayQuestionShouldPrintNicely() {
+        when(question.getOperator()).thenReturn(plusOperator);
+        question.makeNewQuestion(1);
+
         view.displayQuestion(question);
         verify(printer, times(1)).println(shouldLookLikeThis);
     }
@@ -50,6 +52,7 @@ public class displayQuestionTests {
     public void worksWithMinus() {
         when(question.getOperator()).thenReturn(minusOperator);
         question.makeNewQuestion(1);
+
         view.displayQuestion(question);
         verify(printer, times(1)).println(minusShouldLookLikeThis);
     }
