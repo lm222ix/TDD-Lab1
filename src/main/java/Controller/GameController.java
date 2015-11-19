@@ -12,7 +12,8 @@ public class GameController {
     public IView view;
 
     public GameController(Game game, IView view) {
-
+        this.game = game;
+        this.view = view;
     }
 
 }
