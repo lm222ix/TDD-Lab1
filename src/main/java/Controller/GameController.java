@@ -16,4 +16,12 @@ public class GameController {
         this.view = view;
     }
 
+    public boolean play() {
+        IView.selectedAction input;
+
+        input = view.selectedAction();
+
+        return true;
+    }
+
 }

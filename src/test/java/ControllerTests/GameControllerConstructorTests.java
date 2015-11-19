@@ -7,6 +7,8 @@ import View.Printer;
 import View.StandardView;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.mockito.internal.matchers.Null;
+
 import static junit.framework.Assert.*;
 /**
  * Created by Ludde on 2015-11-19.
@@ -19,15 +21,18 @@ public class GameControllerConstructorTests {
 
     @BeforeClass
     public static void setUp() {
-        game = new Game();
-        view = new StandardView(new Printer());
+
     }
 
     @Test
     public void gameOrViewNotNull() {
+        game = new Game();
+        view = new StandardView(new Printer());
         gc = new GameController(game, view);
         assertNotNull(gc.game);
         assertNotNull(gc.view);
     }
+
+
 
 }
