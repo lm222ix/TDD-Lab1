@@ -31,6 +31,7 @@ public class GameController {
     }
 
     public void newGame() {
+        game.setScore(0);
     }
 
     public void displaySettings() {
