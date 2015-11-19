@@ -16,4 +16,5 @@ public interface IView {
     public int getInput();
     public void displayResult(int score);
     public void printRightOrWrong(boolean bool);
-}
+    public void displayQuestion(Model.Question question);
+    }

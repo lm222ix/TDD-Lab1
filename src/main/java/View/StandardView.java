@@ -50,6 +50,11 @@ public class StandardView implements IView {
         }
     }
 
+    public void displayQuestion(Model.Question question) {
+        String s = "";
+        printer.println(s);
+    }
+
     public void displayResult(int score) {
         String message = "Game over. Your score was: " + score + ", ";
         if(score>9) {
