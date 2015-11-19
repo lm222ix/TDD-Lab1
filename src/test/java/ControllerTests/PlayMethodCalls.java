@@ -8,16 +8,17 @@ import View.StandardView;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import static org.mockito.Mockito.*;
-
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
-import static junit.framework.Assert.*;
+
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 
 /**
  * Created by Ludde on 2015-11-19.
  */
-public class PlayMethodTests {
+public class PlayMethodCalls {
 
     private static GameController gc;
     private static IView view;
@@ -29,28 +30,18 @@ public class PlayMethodTests {
     public static void setUp() {
         game = new Game();
         view = new StandardView(new Printer());
-        gc = new GameController(game,view);
+        gc = mock(GameController.class);
 
-    }
-
-    @Test
-    public void PlayReturnsFalseOnlyIfUserQuit() {
-        command = "P".getBytes();
-        InputStream inputStream = new ByteArrayInputStream(command);
-        System.setIn(inputStream);
-        assertTrue(gc.play());
-        command = "Q".getBytes();
-        inputStream = new ByteArrayInputStream(command);
-        System.setIn(inputStream);
-        assertFalse(gc.play());
     }
 
     @Test
     public void PlayCallsNewGameIfInputIsP() {
         gc = mock(GameController.class);
-        command = "P".getBytes();
+        command = "Q".getBytes();
         InputStream inputStream = new ByteArrayInputStream(command);
         System.setIn(inputStream);
+        gc.play();
         verify(gc, times(1)).newGame();
+
     }
 }
