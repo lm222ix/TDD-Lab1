@@ -16,13 +16,15 @@ public class GameController {
         this.view = view;
     }
 
+    public GameController() {}
+
     public boolean play() {
         IView.selectedAction input;
 
         input = view.selectedAction();
 
         if(input == IView.selectedAction.Play) {
-            newGame();
+
         }
 
         if(input == IView.selectedAction.Quit)
