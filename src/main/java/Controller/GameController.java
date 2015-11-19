@@ -21,6 +21,9 @@ public class GameController {
 
         input = view.selectedAction();
 
+        if(input == IView.selectedAction.Quit)
+            return false;
+
         return true;
     }
 
