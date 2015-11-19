@@ -20,19 +20,14 @@ public class GameController {
 
     public boolean play() {
         IView.selectedAction input;
-
         input = view.selectedAction();
-
-
 
         if(input == IView.selectedAction.Play) {
             newGame();
         } else if(input == IView.selectedAction.Settings) {
             displaySettings();
-        } else if(input == IView.selectedAction.Quit) {
-            return false;
         }
-        return true;
+        return input != IView.selectedAction.Quit;
     }
 
     public void newGame() {
