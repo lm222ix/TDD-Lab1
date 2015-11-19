@@ -8,6 +8,8 @@ import View.StandardView;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import static org.mockito.Mockito.*;
+
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import static junit.framework.Assert.*;
@@ -28,6 +30,7 @@ public class PlayMethodTests {
         game = new Game();
         view = new StandardView(new Printer());
         gc = new GameController(game,view);
+
     }
 
     @Test
@@ -40,8 +43,14 @@ public class PlayMethodTests {
         inputStream = new ByteArrayInputStream(command);
         System.setIn(inputStream);
         assertFalse(gc.play());
+    }
 
-
-
+    @Test
+    public void PlayCallsNewGameIfInputIsP() {
+        gc = mock(GameController.class);
+        command = "P".getBytes();
+        InputStream inputStream = new ByteArrayInputStream(command);
+        System.setIn(inputStream);
+        verify(gc, times(1)).newGame();
     }
 }
