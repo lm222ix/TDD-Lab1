@@ -23,10 +23,12 @@ public class GameController {
 
         input = view.selectedAction();
 
-        displaySettings();
+
 
         if(input == IView.selectedAction.Play) {
             newGame();
+        } else if(input == IView.selectedAction.Settings) {
+            displaySettings();
         } else if(input == IView.selectedAction.Quit) {
             return false;
         }
