@@ -2,6 +2,7 @@ package View;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 
 /**
  * Created by Ludde on 2015-11-18.
@@ -52,11 +53,12 @@ public class StandardView implements IView {
 
     public void displayQuestion(Model.Question question) {
         String s = "";
-        for(int i = 0; i<question.getNumbers().size(); i++) {
-            if(i == question.getNumbers().size()-1) {
-                s = s + question.getNumbers().get(i);
+        ArrayList<Integer> numbers = question.getNumbers();
+        for(int i = 0; i<numbers.size(); i++) {
+            if(i == numbers.size()-1) {
+                s = s + numbers.get(i);
             } else {
-                s = s + question.getNumbers().get(i) + " " + question.getOperator() + " ";
+                s = s + numbers.get(i) + " " + question.getOperator() + " ";
             }
         }
         printer.println(s);
