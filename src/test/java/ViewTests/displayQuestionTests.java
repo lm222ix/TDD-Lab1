@@ -28,6 +28,7 @@ public class displayQuestionTests {
     private static final char minusOperator = '-';
 
     private final String shouldLookLikeThis = "1 + 2 + 3";
+    private final String minusShouldLookLikeThis = "1 - 2 - 3";
 
     @BeforeClass
     public static void setUp() {
