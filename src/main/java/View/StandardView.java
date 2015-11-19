@@ -56,7 +56,7 @@ public class StandardView implements IView {
             if(i == question.getNumbers().size()-1) {
                 s = s + question.getNumbers().get(i);
             } else {
-                s = s + question.getNumbers().get(i) + " " + "+" + " ";
+                s = s + question.getNumbers().get(i) + " " + question.getOperator() + " ";
             }
         }
         printer.println(s);
