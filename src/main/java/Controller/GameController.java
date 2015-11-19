@@ -25,11 +25,9 @@ public class GameController {
 
         if(input == IView.selectedAction.Play) {
             newGame();
-        }
-
-        if(input == IView.selectedAction.Quit)
+        } else if(input == IView.selectedAction.Quit) {
             return false;
-
+        }
         return true;
     }
 
