@@ -44,7 +44,14 @@ public class displayQuestionTests {
     public void displayQuestionShouldPrintNicely() {
         view.displayQuestion(question);
         verify(printer, times(1)).println(shouldLookLikeThis);
+    }
 
+    @Test
+    public void worksWithMinus() {
+        when(question.getOperator()).thenReturn(minusOperator);
+        question.makeNewQuestion(1);
+        view.displayQuestion(question);
+        verify(printer, times(1)).println(minusShouldLookLikeThis);
     }
 
 }
