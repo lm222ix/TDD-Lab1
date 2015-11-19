@@ -11,10 +11,12 @@ public class GameController {
 
     public Game game;
     public IView view;
+    private Question question;
 
     public GameController(Game game, IView view) {
         this.game = game;
         this.view = view;
+        this.question = game.getQuestion();
     }
 
     //public GameController() {}
