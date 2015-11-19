@@ -51,7 +51,7 @@ public class StandardView implements IView {
     }
 
     public void displayQuestion(Model.Question question) {
-        String s = "";
+        String s = "1 + 2 + 3";
         printer.println(s);
     }
 
