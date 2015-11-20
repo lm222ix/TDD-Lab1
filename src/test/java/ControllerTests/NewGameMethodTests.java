@@ -31,19 +31,16 @@ public class NewGameMethodTests {
         gc = spy(new GameController(game,view,q));
     }
 
-    @Before
-    public void before() {
-        gc.newGame();
-    }
 
     @Test
     public void newGameResetsScore() {
+        gc.newGame();
         verify(game, times(1)).setScore(0);
     }
 
     @Test
     public void newGameCreatesAndPrintsNewQuestionTenTimes() {
-        verify(game, times(1)).getQuestion();
+        gc.newGame();
         verify(q, times(10)).makeNewQuestion(game.getDifficulty());
     }
 
