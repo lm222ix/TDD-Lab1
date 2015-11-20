@@ -38,9 +38,9 @@ public class GameController {
         for(int i = 0; i<10; i++) {
             question.makeNewQuestion(game.getDifficulty());
             view.displayQuestion(question);
-            int answer = view.getInput();
         }
     }
+
 
     public void displaySettings() {
 

@@ -28,18 +28,19 @@ public class NewGameMethodTests {
     private static Game game;
     private static GameController gc;
     private static Question q;
-
     private static byte[] command;
 
     @BeforeClass
     public static void setUp() {
-        view = spy(new StandardView(new Printer()));
+        //view = spy(new StandardView(new Printer()));
+        view = mock(StandardView.class);
         game = spy(new Game());
         q = spy(new Question());
         gc = spy(new GameController(game,view,q));
-        command = "5".getBytes();
-        InputStream inputStream = new ByteArrayInputStream(command);
-        System.setIn(inputStream);
+
+        //Change the answer to the correct one for each question
+
+        when(view.getAnswer()).thenReturn(9001);     //this can never be the answer
     }
 
 
@@ -47,29 +48,13 @@ public class NewGameMethodTests {
     public void newGameCallsMethodsInOrder() {
         gc.newGame();
 
-        InOrder inOrder = inOrder(game, q, view);
-
+        InOrder inOrder = inOrder(game, q);
         inOrder.verify(game, times(1)).setScore(0);
         verify(q, times(10)).makeNewQuestion(game.getDifficulty());
         verify(view, times(10)).displayQuestion(gc.question);
-
-        //Change the answer to the correct one for each question
-        command = String.valueOf(q.getAnswer()).getBytes();
-        InputStream inputStream = new ByteArrayInputStream(command);
-        System.setIn(inputStream);
-
-
-        verify(view, times(10)).getInput();
-        //Should +1 10 times since the test always answers correctly
-        verify(game, times(10)).setScore(game.getScore() + 1);
-
+        verify(view,times(10)).getAnswer();                         //Wait for user input 10 times
+        verify(q, times(10)).getAnswer();                       //Check user response against accual answer 10 times
+        verify(view,times(10)).printRightOrWrong(false);    //Print right/wrong 10 times, in this case 10 wrongs
     }
-
-
-
-
-
-
-
 
 }

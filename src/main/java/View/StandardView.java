@@ -39,7 +39,7 @@ public class StandardView implements IView {
         }
     }
 
-    public int waitForAnswer() {
+    public int getAnswer() {
         Scanner scan = new Scanner(System.in);
         try {
             return scan.nextInt();
