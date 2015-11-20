@@ -25,7 +25,7 @@ public class NewGameMethodTests {
 
     @BeforeClass
     public static void setUp() {
-        view = new StandardView(new Printer());
+        view = spy(new StandardView(new Printer()));
         game = spy(new Game());
         q = spy(new Question());
         gc = spy(new GameController(game,view,q));
@@ -39,9 +39,16 @@ public class NewGameMethodTests {
     }
 
     @Test
-    public void newGameCreatesAndPrintsNewQuestionTenTimes() {
+    public void newGameCreatesANewQuestionTenTimes() {
         gc.newGame();
         verify(q, times(10)).makeNewQuestion(game.getDifficulty());
+
+    }
+
+    @Test
+    public void newGameDisplaysAQuestionTenTimes() {
+        gc.newGame();
+        verify(view, times(10)).displayQuestion(gc.question);
     }
 
 
