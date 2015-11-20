@@ -14,6 +14,7 @@ public interface IView {
     public void displayEditSettingsMenu();
     public selectedAction selectedAction();
     public int getInput();
+    public int getAnswer();
     public void displayResult(int score);
     public void printRightOrWrong(boolean bool);
     public void displayQuestion(Model.Question question);

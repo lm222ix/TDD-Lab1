@@ -3,6 +3,8 @@ package View;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 /**
  * Created by Ludde on 2015-11-18.
@@ -33,6 +35,16 @@ public class StandardView implements IView {
             return System.in.read();
         } catch(IOException e) {
             System.out.println(e.getMessage());
+            return 0;
+        }
+    }
+
+    public int waitForAnswer() {
+        Scanner scan = new Scanner(System.in);
+        try {
+            return scan.nextInt();
+        } catch(InputMismatchException e) {
+            System.out.println("Invalid input, try again");
             return 0;
         }
     }
