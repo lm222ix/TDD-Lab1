@@ -50,6 +50,9 @@ public class GameController {
 
     public void displaySettings() {
 
+        view.displayEditSettingsMenu();
+        int diff = view.getAnswer();
+        game.setDifficulty(diff);
     }
 
 }
