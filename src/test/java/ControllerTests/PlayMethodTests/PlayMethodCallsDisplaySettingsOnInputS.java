@@ -12,9 +12,7 @@ import org.junit.Test;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 
-import static org.mockito.Mockito.spy;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.*;
 
 /**
  * Created by Ludde on 2015-11-19.
@@ -32,6 +30,9 @@ public class PlayMethodCallsDisplaySettingsOnInputS {
         game = new Game();
         view = new StandardView(new Printer());
         gc = spy(new GameController(game,view, new Question()));
+
+        //Fixes errors introduces by the displaySettings test
+        doNothing().when(gc).displaySettings();
     }
 
     @Test

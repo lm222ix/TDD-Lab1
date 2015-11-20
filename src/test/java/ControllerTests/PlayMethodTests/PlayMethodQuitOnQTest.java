@@ -30,7 +30,12 @@ public class PlayMethodQuitOnQTest {
     public static void setUp() {
         game = new Game();
         view = new StandardView(new Printer());
-        gc = new GameController(game,view, new Question());
+        gc = new GameController(game,view, new Question()) {
+            @Override
+            public void newGame() {
+                //Do nothing, we are not really using this method here, just indicing that we call it
+            }
+        };
 
     }
 

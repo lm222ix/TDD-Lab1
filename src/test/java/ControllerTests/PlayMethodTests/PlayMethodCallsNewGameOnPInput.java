@@ -30,6 +30,9 @@ public class PlayMethodCallsNewGameOnPInput {
         game = new Game();
         view = new StandardView(new Printer());
         gc = spy(new GameController(game,view, new Question()));
+
+        //fix
+        doNothing().when(gc).newGame();
     }
 
     @Test
