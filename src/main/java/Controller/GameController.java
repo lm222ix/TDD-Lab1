@@ -17,14 +17,15 @@ public class GameController {
         this.game = game;
         this.view = view;
         this.question = q;
+        view.displayWelcome();
     }
 
     //public GameController() {}
 
     public boolean play() {
+        view.displayInstructions();
         IView.selectedAction input;
         input = view.selectedAction();
-
         if(input == IView.selectedAction.Play) {
             newGame();
         } else if(input == IView.selectedAction.Settings) {
@@ -46,6 +47,7 @@ public class GameController {
                 view.printRightOrWrong(false);
             }
         }
+        view.displayResult(this.game.getScore());
     }
 
     public void displaySettings() {
