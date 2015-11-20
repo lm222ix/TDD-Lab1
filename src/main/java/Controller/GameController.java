@@ -52,7 +52,12 @@ public class GameController {
 
         view.displayEditSettingsMenu();
         int diff = view.getAnswer();
-        game.setDifficulty(diff);
+        if(diff == 1 || diff == 2 ||diff == 3) {
+            game.setDifficulty(diff);
+        } else {
+            System.out.println("invalid difficulty!");
+            displaySettings();
+        }
     }
 
 }

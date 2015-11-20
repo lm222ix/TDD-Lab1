@@ -40,8 +40,10 @@ public class DisplaySettingsTest {
 
         //When setDiff is called call it with (1) parameter.
         Mockito.doCallRealMethod().when(game).setDifficulty(anyInt());
-        game.setDifficulty(1);
+        game.setDifficulty(2);
 
+
+        when(view.getAnswer()).thenReturn(2);     //this can never be the answer
 
     }
 
@@ -51,7 +53,19 @@ public class DisplaySettingsTest {
         gc.displaySettings();
         verify(view, times(1)).displayEditSettingsMenu();
         verify(view,times(1)).getAnswer();
-        verify(game, times(1)).setDifficulty(1);
+        verify(gc.game, times(2)).setDifficulty(2);
+    }
+
+    @Test
+    public void assertDiffIsChanged() {
+
+        game = new Game();
+        q = new Question();
+        gc = new GameController(game,view,q);
+
+        assertEquals(1, game.getDifficulty());
+        gc.displaySettings();
+        assertEquals(2,game.getDifficulty());
     }
 
 
