@@ -40,14 +40,12 @@ public class NewGameMethodTests {
 
     @Test
     public void newGameCreatesANewQuestionTenTimes() {
-        gc.newGame();
         verify(q, times(10)).makeNewQuestion(game.getDifficulty());
 
     }
 
     @Test
     public void newGameDisplaysAQuestionTenTimes() {
-        gc.newGame();
         verify(view, times(10)).displayQuestion(gc.question);
     }
 
