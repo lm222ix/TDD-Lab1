@@ -45,16 +45,17 @@ public class NewGameMethodTests {
 
 
     @Test
-    public void newGameCallsMethodsInOrder() {
+    public void newGameCallsMethodsWrongAnswers() {
         gc.newGame();
 
         InOrder inOrder = inOrder(game, q);
         inOrder.verify(game, times(1)).setScore(0);
         verify(q, times(10)).makeNewQuestion(game.getDifficulty());
         verify(view, times(10)).displayQuestion(gc.question);
-        verify(view,times(10)).getAnswer();                         //Wait for user input 10 times
+        verify(view, times(10)).getAnswer();                         //Wait for user input 10 times
         verify(q, times(10)).getAnswer();                       //Check user response against accual answer 10 times
-        verify(view,times(10)).printRightOrWrong(false);    //Print right/wrong 10 times, in this case 10 wrongs
+        verify(view, times(10)).printRightOrWrong(false);    //Print right/wrong 10 times, in this case 10 wrongs
     }
+
 
 }

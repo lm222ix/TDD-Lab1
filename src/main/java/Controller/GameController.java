@@ -39,8 +39,12 @@ public class GameController {
             question.makeNewQuestion(game.getDifficulty());
             view.displayQuestion(question);
             int answer = view.getAnswer();
-            question.getAnswer();
-            view.printRightOrWrong(false);
+            if(answer == question.getAnswer()) {
+                this.game.setScore(this.game.getScore() + 1);
+                view.printRightOrWrong(true);
+            } else {
+                view.printRightOrWrong(false);
+            }
         }
     }
 
