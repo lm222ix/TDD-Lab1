@@ -48,7 +48,6 @@ public class GameController {
         }
     }
 
-
     public void displaySettings() {
 
     }

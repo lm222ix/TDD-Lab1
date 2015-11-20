@@ -28,17 +28,13 @@ public class NewGameMethodTests {
     private static Game game;
     private static GameController gc;
     private static Question q;
-    private static byte[] command;
 
     @BeforeClass
     public static void setUp() {
-        //view = spy(new StandardView(new Printer()));
         view = mock(StandardView.class);
         game = spy(new Game());
         q = spy(new Question());
         gc = spy(new GameController(game,view,q));
-
-        //Change the answer to the correct one for each question
 
         when(view.getAnswer()).thenReturn(9001);     //this can never be the answer
     }
