@@ -49,7 +49,6 @@ public class GameController {
     }
 
     public void displaySettings() {
-
         view.displayEditSettingsMenu();
         int diff = view.getAnswer();
         if(diff == 1 || diff == 2 ||diff == 3) {
