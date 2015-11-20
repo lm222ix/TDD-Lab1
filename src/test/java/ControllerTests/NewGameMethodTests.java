@@ -11,6 +11,9 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.mockito.Mockito.*;
 import static junit.framework.Assert.*;
+import org.mockito.verification.*;
+import org.mockito.Mock.*;
+import org.mockito.*;
 
 /**
  * Created by Ludde on 2015-11-19.
@@ -33,22 +36,15 @@ public class NewGameMethodTests {
 
 
     @Test
-    public void newGameResetsScore() {
+    public void newGameCallsMethodsInOrder() {
         gc.newGame();
-        verify(game, times(1)).setScore(0);
-    }
 
-    @Test
-    public void newGameCreatesANewQuestionTenTimes() {
+        InOrder inOrder = inOrder(game, q, view);
+
+        inOrder.verify(game, times(1)).setScore(0);
         verify(q, times(10)).makeNewQuestion(game.getDifficulty());
-
-    }
-
-    @Test
-    public void newGameDisplaysAQuestionTenTimes() {
         verify(view, times(10)).displayQuestion(gc.question);
     }
-
 
 
 
