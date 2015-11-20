@@ -37,7 +37,7 @@ public class GameController {
         game.setScore(0);
         for(int i = 0; i<10; i++) {
             question.makeNewQuestion(game.getDifficulty());
-
+            view.displayQuestion(question);
         }
     }
 
